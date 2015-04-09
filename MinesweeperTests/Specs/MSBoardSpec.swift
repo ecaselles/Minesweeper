@@ -9,23 +9,13 @@
 import XCTest
 
 class MSBoardSpec: XCTestCase {
-
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
     
     // MARK: Creation
     
     func testBoardCreationWithNoSize() {
         let board = MSBoard(width: 0, height: 0, values: "")
-        XCTAssert(board.dimensions.width == 0, "Test width")
-        XCTAssert(board.dimensions.height == 0, "Test height")
+        XCTAssert(board.dimensions.width == 0, "Test width is 0")
+        XCTAssert(board.dimensions.height == 0, "Test height is 0")
         
         XCTAssert(board.tiles.isEmpty, "Test tiles with no size")
     }
@@ -48,8 +38,8 @@ class MSBoardSpec: XCTestCase {
     
     func testBoardCreationSuccessfully() {
         let board = MSBoard(width: 2, height: 3, values: "* .\n. .\n. *")
-        XCTAssert(board.dimensions.width == 2, "Test width")
-        XCTAssert(board.dimensions.height == 3, "Test height")
+        XCTAssert(board.dimensions.width == 2, "Test width is 2")
+        XCTAssert(board.dimensions.height == 3, "Test height is 3")
         
         let expected = [
             ["*", "."],
