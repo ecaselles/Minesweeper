@@ -17,31 +17,26 @@ var input = NSString(data: NSFileHandle.fileHandleWithStandardInput().availableD
 let items = input.stringByReplacingOccurrencesOfString("\n", withString: "").componentsSeparatedByString(" ")
 let width = items[0].toInt()!
 let height = items[1].toInt()!
-
-println("Enter the field:")
-
 var values = String()
-for line in 1...height {
-    input = NSString(data: NSFileHandle.fileHandleWithStandardInput().availableData, encoding:NSUTF8StringEncoding) as String
-    values += input
-}
 
-println()
+if width > 0 && height > 0 {
+    println("Enter the field:")
 
-let board = MSBoard(width: width, height: height, values: values)
-
-println("Field:")
-let field = board.hintTiles
-for row in 0..<board.dimensions.height {
-    for column in 0..<board.dimensions.width {
-        print(field[row][column] + " ")
+    for line in 1...height {
+        input = NSString(data: NSFileHandle.fileHandleWithStandardInput().availableData, encoding:NSUTF8StringEncoding) as String
+        values += input
     }
-    print("\n")
+    
+    println()
+    
+    let board = MSBoard(width: width, height: height, values: values)
+    
+    println("Field:")
+    let field = board.hintTiles
+    for row in 0..<board.dimensions.height {
+        for column in 0..<board.dimensions.width {
+            print(field[row][column] + " ")
+        }
+        print("\n")
+    }
 }
-
-
-
-
-
-
-
