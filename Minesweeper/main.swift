@@ -12,7 +12,7 @@ println("Enter the dimensions of the field (M N):")
 
 var fileHandle = NSFileHandle.fileHandleWithStandardInput()
 
-var input = NSString(data: NSFileHandle.fileHandleWithStandardInput().availableData, encoding:NSUTF8StringEncoding) as String
+var input = NSString(data: NSFileHandle.fileHandleWithStandardInput().availableData, encoding:NSUTF8StringEncoding) as! String
 
 let items = input.stringByReplacingOccurrencesOfString("\n", withString: "").componentsSeparatedByString(" ")
 let width = items[0].toInt()!
@@ -23,7 +23,7 @@ if width > 0 && height > 0 {
     println("Enter the field:")
 
     for line in 1...height {
-        input = NSString(data: NSFileHandle.fileHandleWithStandardInput().availableData, encoding:NSUTF8StringEncoding) as String
+        input = NSString(data: NSFileHandle.fileHandleWithStandardInput().availableData, encoding:NSUTF8StringEncoding) as! String
         values += input
     }
     

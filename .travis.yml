@@ -1,3 +1,4 @@
 language: objective-c
+osx_image: xcode6.4
 xcode_project: Minesweeper.xcodeproj # path to your xcodeproj folder
-xcode_scheme: MinesweeperTests
+xcode_scheme: Minesweeper
