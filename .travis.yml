@@ -1,4 +1,3 @@
 language: objective-c
 osx_image: xcode6.4
-xcode_project: Minesweeper.xcodeproj # path to your xcodeproj folder
-xcode_scheme: Minesweeper
+script: xcodebuild -project Minesweeper.xcodeproj -scheme "Minesweeper" -sdk "macosx10.10" -destination "arch=x86_64" -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty -c
